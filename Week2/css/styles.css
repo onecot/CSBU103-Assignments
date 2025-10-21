@@ -1,0 +1,255 @@
+/* Universal selector - resets default browser styles for consistency */
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  text-align: justify;
+}
+
+body {
+  margin: 0px;
+  cursor: default; /* Standard arrow cursor */
+}
+
+/* Main CV container - sets base typography */
+.cv-document {
+  box-sizing: border-box;
+  border: none;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Arial, sans-serif, tahoma;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* CV page wrapper - creates paper-like appearance with fixed width and shadow */
+.cv-page {
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  text-decoration: none;
+  vertical-align: baseline;
+  width: 900px; /* Fixed width for consistent layout */
+  min-height: 900px;
+  margin: 0 auto; /* Centers the page horizontally */
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  background-color: #fff;
+  position: relative;
+
+  padding: 40px;
+}
+
+/* Columns - two-column layout system */
+.col-1 {
+  /* Column 1 */
+  width: 200px; /* Fixed width for labels/dates */
+}
+
+.col-2 {
+  /* Column 2 */
+  margin-left: 24px; /* Spacing between columns */
+  width: 590px; /* Flexible width for content */
+}
+
+div[class^="col-"] {
+  /* All columns display inline-block */
+  display: inline-block; /* Allows columns to sit side by side */
+}
+
+.col_title {
+  font-weight: bold; /* Emphasizes titles */
+}
+
+.col_content,
+.col_description,
+.col-1 {
+  margin-bottom: 8px;
+}
+
+/* Rows - removes default spacing from first elements */
+.row:first-child,
+.section:first-child,
+li:first-child,
+#experience li:first-child,
+.project:first-child,
+.info-item:first-child {
+  padding-top: 0 !important; /* Removes top spacing for cleaner layout */
+  margin-top: 0 !important;
+}
+
+/* Row container with separator line */
+.row {
+  position: relative;
+  padding-top: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle divider between rows */
+}
+
+/* TIMELINE - creates vertical line with dots for chronological events */
+.timeline > .row {
+  left: 24px; /* Offsets content to make room for timeline */
+}
+
+.timeline > .row:before {
+  content: ""; /* Pseudo-element for vertical line */
+  background-color: #000;
+  opacity: 0.2;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: calc(-24px + 3.5px); /* Centers line relative to dots */
+  width: 1px;
+}
+
+.timeline > .row:after {
+  content: ""; /* Pseudo-element for timeline dots */
+  background-color: #000;
+  border-radius: 50%; /* Makes it circular */
+  position: absolute;
+  left: -24px;
+  top: 16px;
+  height: 8px;
+  width: 8px;
+}
+
+.timeline > .row:first-child:after {
+  top: 8px; /* Adjusts first dot position */
+}
+
+.timeline .col-2 {
+  margin-left: 0; /* Removes left margin in timeline rows */
+}
+
+/* OTHERS - link, list, ...*/
+/* Link styles - subtle by default, bold on hover */
+a {
+  color: #000;
+  text-decoration: none;
+  opacity: 0.7; /* Slightly faded */
+}
+
+a:hover {
+  opacity: 1; /* Full opacity on hover */
+  text-decoration: underline;
+}
+
+a > i {
+  /* Adjusts icon position */
+  font-size: 1.5em;
+  transform: translateY(-0.2em); /* Positions icon relative to text */
+  position: absolute;
+  font-weight: normal;
+}
+
+/* List item styling */
+li {
+  margin-left: 1em; /* Indents list items */
+}
+
+li > span {
+  /* List content is inline-block */
+  display: inline-block; /* Allows consistent spacing */
+  margin-left: 8px;
+}
+
+/* SECTION - spacing and title styling */
+.section {
+  margin-top: 40px; /* Spacing between sections */
+  position: relative;
+}
+
+.section-title {
+  text-transform: uppercase; /* All caps for section headers */
+  font-weight: bold;
+  border-bottom: 1px solid #000; /* Underline for emphasis */
+  padding-bottom: 4px;
+}
+
+.section-content {
+  margin-top: 16px;
+}
+
+/* INFO - personal information section styles */
+#info .row {
+  border: none; /* Removes row borders in info section */
+}
+
+#info > div,
+#info[class^="col-"] {
+  display: inline-block; /* Enables side-by-side layout */
+}
+
+.info-name {
+  color: #0e2452; /* Dark blue for name emphasis */
+}
+
+#info .col-1 {
+  margin-bottom: 0;
+  font-weight: bold; /* Bold labels */
+  width: 100px; /* Narrower column for info labels */
+}
+
+.info-image {
+  position: absolute; /* Positions image independently */
+  right: 0;
+  top: 0; /* Top-right corner placement */
+}
+
+.info-image > img {
+  width: 113px;
+  height: 113px; /* Square avatar dimensions */
+}
+
+/* EXPERIENCE - experience section with custom list style */
+#experience ul {
+  list-style: none; /* Removes default bullets */
+}
+
+#experience ul > li::before {
+  /* Custom list style */
+  content: "- "; /* Uses dash instead of bullet */
+}
+
+#experience li {
+  margin-top: 4px;
+  margin-left: 0px;
+}
+
+/* SKILLS - skills section styling */
+#skill .col-1 {
+  font-weight: bold; /* Bold skill names */
+}
+
+/* PROJECTS - projects section styling */
+.project {
+  margin-top: 16px; /* Spacing between projects */
+}
+
+.project-title {
+  font-weight: bold;
+  text-transform: uppercase; /* Emphasizes project names */
+}
+
+.project-detail {
+  margin-top: 8px;
+}
+
+/* CONTACT - contact section with traditional link colors */
+#contact a {
+  opacity: 1; /* Full opacity for contact links */
+}
+
+#contact a:visited {
+  color: #0000ee; /* Browser default visited link color (blue) */
+}
+
+#contact a:link {
+  color: #551a8b; /* Browser default unvisited link color (purple) */
+}

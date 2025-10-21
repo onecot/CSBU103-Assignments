@@ -1,0 +1,396 @@
+<!DOCTYPE html> <!-- Declares this as an HTML5 document -->
+<html lang="en"> <!-- Root element with language attribute for accessibility -->
+  <head>
+    <meta charset="utf-8" /> <!-- Sets character encoding to UTF-8 for international characters -->
+    <title>About Tan</title> <!-- Page title shown in browser tab -->
+    <meta name="robots" content="noindex" /> <!-- Prevents search engines from indexing this page -->
+    
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon"> <!-- Browser tab icon -->
+
+    <link rel="stylesheet" href="./css/styles.css" /> <!-- Links external CSS stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css"
+      integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> <!-- CDN for RemixIcon library for scalable vector icons -->
+  </head>
+
+  <body> <!-- Contains all visible content of the webpage -->
+    <div class="cv-document"> <!-- Wrapper for the entire CV document -->
+      <div class="cv-page"> <!-- Main container for CV content with fixed width and shadow -->
+        <!-- INFO -->
+        <div class="section" id="info"> <!-- Section wrapper with unique ID for styling/navigation -->
+          <!-- PERSONAL INFO -->
+          <div class="info-content"> <!-- Container for personal information text -->
+            <h1 class="info-name">Lê Minh Tân</h1> <!-- Highest level heading for name (SEO and accessibility) -->
+            <div class="row"> <!-- Row container for label-value pairs -->
+              <div class="col-1">Date of birth</div> <!-- Label column (fixed width) -->
+              <div class="col-2">11/02/2007</div> <!-- Value column (flexible width) -->
+            </div>
+            <div class="row">
+              <div class="col-1">Gender</div>
+              <div class="col-2">Nam</div>
+            </div>
+            <div class="row">
+              <div class="col-1">Phone</div>
+              <div class="col-2">(+84) 898 242 xxx</div>
+            </div>
+            <div class="row">
+              <div class="col-1">Email</div>
+              <div class="col-2">
+                <a href="mailto:25560052@gm.uit.edu.vn">25560052@gm.uit.edu.vn</a> <!-- mailto: protocol opens email client -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1">Address</div>
+              <div class="col-2">Hồ Chí Minh City, Việt Nam</div>
+            </div>
+          </div>
+
+          <!-- PROFILE AVATAR -->
+          <div class="info-image"> <!-- Positioned absolutely to appear on the right side -->
+            <img src="./images/default-avatar.jpeg" alt="My avatar" /> <!-- alt text for accessibility and SEO -->
+          </div>
+        </div>
+
+        <!-- CAREER OBJECTIVE -->
+        <div class="section" id="target"> <!-- Semantic section with unique ID -->
+          <h2 class="section-title">Career Objective</h2> <!-- h2 for section hierarchy -->
+          <div class="section-content"> <!-- Container for section content -->
+            As a Computer Science freshman at the University of Information Technology, I am eager to build a strong foundation in programming and software development while pursuing my passion for Machine Learning and Data Analytics. I aim to specialize in these fields, leveraging my problem-solving skills and competitive programming background to extract meaningful insights from data and develop intelligent systems. I am seeking opportunities to apply my technical skills in real-world projects, continuously learn emerging technologies, and contribute to innovative solutions that make a positive impact.
+          </div>
+        </div>
+
+        <!-- HOC VAN -->
+        <div class="section" id="education">
+          <h2 class="section-title">Education</h2>
+          <div class="section-content timeline"> <!-- timeline class adds vertical line and dots for chronological display --> <!-- timeline class adds vertical line and dots for chronological display -->
+
+            <div class="row">
+              <div class="col-1">10/2025 - Current</div> <!-- Time period column -->
+              <div class="col-2">
+                <p class="col_title"> <!-- Paragraph for institution name with bold styling -->
+                  Student at
+                  <a target="_blank" href="https://www.uit.edu.vn/"> <!-- target="_blank" opens link in new tab -->
+                    University of Information Technology - VNUHCM
+                    <i class="ri-arrow-right-up-line"></i> <!-- RemixIcon for external link indicator -->
+                  </a>
+                </p>
+                <p class="col_content"> <!-- Paragraph for additional details -->
+                  Major: Computer Science
+                </p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">09/2022 - 05/2025</div>
+              <div class="col-2">
+                <p class="col_title">
+                  <a target="_blank" href="http://lqddn.edu.vn/">
+                    Le Quy Don High School for the Gifted - Da Nang
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </p>
+                <p class="col_content">
+                  Specialized in Information Technology
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- EXPERIENCES -->
+        <div class="section" id="experience">
+          <h2 class="section-title">Experiences</h2>
+          <div class="section-content timeline"> <!-- Timeline layout for chronological work experience --> <!-- Timeline layout for chronological work experience -->
+            <div class="row">
+              <div class="col-1">05/2023 - 07/2024</div>
+              <div class="col-2">
+                <div class="col_title">
+                  <a target="_blank" href="https://lqdoj.edu.vn/"
+                    >Le Quy Don Online Judge (LQDOJ)
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="col_content">Graphic Designer</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">11/2023 - 06/2024</div>
+              <div class="col-2">
+                <div class="col_title">
+                  <a target="_blank" href="https://www.facebook.com/httt.lqd"
+                    >Journey to Knowledge
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="col_content">Member of Technical Board</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXTRACURRICULARS -->
+        <div class="section" id="activity">
+          <h2 class="section-title">Extracurriculars</h2>
+          <div class="section-content">
+            <div class="row">
+              <div class="col-1">07/2023 - 07/2024</div>
+              <div class="col-2">
+                <div class="col_title">
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/profile.php?id=100094919422465"
+                  >
+                    Tech For Life Club
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="col_content">Vice Head of Media Board</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">08/2023 - 08/2024</div>
+              <div class="col-2">
+                <div class="col_title">
+                  <a target="_blank" href="https://www.facebook.com/YCCLQD">
+                    Young Creation Club
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="col_content">Member of Media & Design Board</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">09/2023 - 05/2024</div>
+              <div class="col-2">
+                <div class="col_title">
+                  <a target="_blank" href="https://www.facebook.com/Leme.olcm">
+                    Ở Lê Có Media (Lême) Club
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="col_content">Member of Design Board</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="section" id="skill">
+          <h2 class="section-title">Skills</h2>
+          <div class="section-content">
+            
+            <div class="row"> <!-- Row for each skill with name and proficiency level -->
+              <div class="col-1">C/C++</div> <!-- Skill name -->
+              <div class="col-2">
+                <div class="col_content">Intermediate</div> <!-- Proficiency level -->
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">HTML/CSS</div>
+              <div class="col-2">
+                <div class="col_content">Intermediate</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">JavaScript</div>
+              <div class="col-2">
+                <div class="col_content">Intermediate</div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">Git</div>
+              <div class="col-2">
+                <div class="col_content">Fundamental</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CERTIFICATE -->
+        <div class="section" id="certificate">
+          <h2 class="section-title">Prizes</h2>
+          <div class="section-content">
+
+            <div class="row">
+              <div class="col-1">2025</div> <!-- Year column -->
+              <div class="col-2">
+                <div class="col_content">
+                  <strong>First Prize</strong> in <!-- strong for emphasis and bold text -->
+                  <em>The municipal IT Competition for Youth</em> <!-- em for italic emphasis on competition name -->
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">2025</div>
+              <div class="col-2">
+                <div class="col_content">
+                  <strong>First Prize</strong> in
+                  <em>Informatics - Municipal Academic Competition</em>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">2023</div>
+              <div class="col-2">
+                <div class="col_content">
+                  <strong>First Prize</strong> in
+                  <em>Informatics at the "HSGS Olympiad"</em>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">2024</div>
+              <div class="col-2">
+                <div class="col_content">
+                  <strong>Silver Medal</strong> in
+                  <em>The Olympiad in Informatics in Central and Central Highlands of Vietnam</em>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">2023</div>
+              <div class="col-2">
+                <div class="col_content">
+                  <strong>Bronze Medal</strong> in
+                  <em>Informatics at the Traditional Olympic of 30 April</em>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- HOBBY -->
+        <div class="section" id="hobby">
+          <h2 class="section-title">Hobby</h2>
+          <div class="section-content">
+            <ul> <!-- Unordered list for hobbies (bullet points) -->
+              <li> <!-- List item for each hobby -->
+                Learning
+              </li>
+              <li>
+                Cooking
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section" id="projects">
+          <h2 class="section-title">Projects</h2>
+          <div class="section-content">
+            <div class="project"> <!-- Container for individual project -->
+              <h2 class="project-title"> <!-- h2 used for project names within section -->
+                <a
+                  target="_blank"
+                  href="#"
+                >
+                  Mentary <i class="ri-arrow-right-up-line"></i> <!-- Icon indicating external/new tab link -->
+                ></a>
+              </h2>
+              <div class="project-time">11/2023</div> <!-- Project completion date -->
+              <div class="project-detail"> <!-- Container for project details -->
+                <ul> <!-- List for structured project information -->
+                  <li>
+                    <span> <strong>Position:</strong> Developer </span>
+                  </li>
+                  <li>
+                    <span
+                      ><strong>Description:</strong> A diary web app aimed at
+                      improving users' mental health.
+                    </span>
+                  </li>
+                  <li>
+                    <span
+                      ><strong>My objective:</strong> Build, develop, optimize,
+                      and handle errors.
+                    </span>
+                  </li>
+                  <li>
+                    <span
+                      ><strong>Tech stack:</strong> HTML, CSS, ReactJS,
+                      TailwindCSS, Wit AI, Firebase</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project">
+              <h2 class="project-title">
+                <a target="_blank" href="#">
+                  Personal Website <i class="ri-arrow-right-up-line"></i
+                ></a>
+              </h2>
+              <div class="project-time">12/2022</div>
+              <div class="project-detail">
+                <ul>
+                  <li>
+                    <span> <strong>Position:</strong> Developer </span>
+                  </li>
+                  <li>
+                    <span
+                      ><strong>Description:</strong> Personal website. Overview of
+                      personal information and contact details.</span
+                    >
+                  </li>
+                  <li>
+                    <span
+                      ><strong>My objective:</strong> Build, develop, and optimize
+                      code
+                    </span>
+                  </li>
+                  <li>
+                    <span
+                      ><strong>Tech stack:</strong> HTML, CSS, JavaScript
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT / FOOTER -->
+        <div class="section" id="contact">
+          <h2 class="section-title">Contact</h2>
+          <div class="section-content">
+            <ol> <!-- Ordered list (numbered) for contact links -->
+              <li>
+                <a target="_blank" href="https://www.facebook.com/1overcot/"> <!-- External social media links -->
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.linkedin.com/in/leminhtan/">
+                  Linkedin
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://github.com/onecot">Github</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
