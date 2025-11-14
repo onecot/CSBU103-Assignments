@@ -2,11 +2,6 @@
 
 A collection of weekly assignments for the CSBU103 course.
 
-## Live previews
-
-- Week 2 — CV: https://asm-week2-444312.gitlab.io/
-- Week 4 — Calculator: https://week4-calculator-ebef10.gitlab.io/
-
 ## Week 2 — CV
 
 - Source folder: `Week2/`
