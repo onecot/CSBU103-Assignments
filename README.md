@@ -12,8 +12,6 @@ A collection of weekly assignments for the CSBU103 course.
 - Source folder: `Week2/`
 - Live preview: https://asm-week2-444312.gitlab.io/
 
-Open `Week2/cv.html` directly in your browser to view locally.
-
 ## Week 4 — Calculator
 
 - Source folder: `Week4/Calculator/`
