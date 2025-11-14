@@ -1,0 +1,126 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+/* CSS Variables for theming and responsive design */
+:root {
+    --container-width: 420px;
+    --dark-color: #111;
+    --background-color: #444;
+    --intensive-color: #222;
+    --text-color: #eee;
+    --text-intensive-color: #999;
+    --font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-weight: 600;
+}
+
+/* Reset default browser styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Base font size for rem calculations */
+html {
+    font-size: 36px;
+}
+
+/* Body styling with full viewport coverage */
+body {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    background-color: var(--dark-color);
+    color: var(--text-color);
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* Main calculator container - centered on screen */
+.container {
+    max-width: var(--container-width);
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+}
+
+main {
+}
+
+/* Display area styling */
+#display {
+    width: 100%;
+    font-size: 1.8em;
+}
+
+/* Scrollable wrapper for display overflow */
+.display-wrapper {
+    overflow: auto; /* Enable scrolling for long expressions */
+    display: flex;
+    width: 100%;
+}
+
+/* Hide scrollbar for cleaner look */
+.display-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* Right-align text in display */
+.display-wrapper > div {
+    text-align: right;
+    flex-grow: 1;
+}
+
+/* Grid layout for calculator buttons - 4 columns */
+#numpad .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* Button styling - circular buttons with size based on container width */
+#numpad button {
+    height: calc(var(--container-width) / 4);
+    width: calc(var(--container-width) / 4);
+    border: 2px solid var(--dark-color);
+    border-radius: 100%; /* Make buttons circular */
+    position: relative;
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: all .2s ease; /* Smooth hover animation */
+}
+
+/* Button hover effect - slight opacity and scale change */
+#numpad button:hover {
+    opacity: 0.8;
+    scale: 0.975;
+}
+
+/* Center button text using absolute positioning */
+#numpad button span {
+    position: absolute;
+    left: 100;
+    top: 100;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: var(--font-weight);
+    color: var(--text-color);
+}
+
+/* Special styling for AC, C, and Back buttons */
+#numpad button.color-intensive {
+    background-color: var(--intensive-color);
+}
+
+#numpad button.color-intensive span {
+    color: var(--text-intensive-color);
+}
+
+/* Responsive design - full width on small screens */
+@media (max-width: 420px) {
+    :root {
+        --container-width: 100vw; /* Use full viewport width on mobile */
+    }
+}
