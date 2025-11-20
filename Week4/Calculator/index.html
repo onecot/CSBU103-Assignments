@@ -4,114 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Calculator</title>
 </head>
 <body>
-    <!-- Main calculator container -->
+    <!-- Help -->
+    <button id="help-btn"><i class="fa-solid fa-circle-question"></i> Help</button>
+
+    <!-- Help modal -->
+    <div id="help-modal" class="help-modal">
+        <div class="help-content">
+            <h2>Calculator Help <button id="help-close"><i class="fa-solid fa-xmark"></i></button></h2>
+            
+            <section>
+                <h3><i class="fa-solid fa-calculator"></i> Operations</h3>
+                <ul>
+                    <li><kbd>+</kbd> Addition</li>
+                    <li><kbd>-</kbd> Subtraction</li>
+                    <li><kbd>×</kbd> Multiplication</li>
+                    <li><kbd>÷</kbd> Division</li>
+                    <li><kbd>%</kbd> Modulo (remainder after division)</li>
+                    <li><kbd>.</kbd> Decimal point</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h3><i class="fa-solid fa-keyboard"></i> Keyboard Shortcuts</h3>
+                <ul>
+                    <li><kbd>0-9</kbd> Number input</li>
+                    <li><kbd>+ - * / %</kbd> Operators</li>
+                    <li><kbd>.</kbd> Decimal point</li>
+                    <li><kbd>Enter</kbd> or <kbd>=</kbd> Calculate result</li>
+                    <li><kbd>Backspace</kbd> Delete last character</li>
+                    <li><kbd>Escape</kbd> All Clear (reset)</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h3><i class="fa-solid fa-mouse-pointer"></i> Buttons</h3>
+                <ul>
+                    <li><kbd>AC</kbd> All Clear - resets calculator</li>
+                    <li><kbd>C</kbd> Clear - clears current input</li>
+                    <li><kbd>←</kbd> Backspace - deletes last character</li>
+                    <li><kbd>=</kbd> Calculate - evaluates expression</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h3><i class="fa-solid fa-circle-info"></i> Special Cases</h3>
+                <ul>
+                    <li>Division by zero shows "Undefined"</li>
+                    <li>Modulo by zero shows "Undefined"</li>
+                    <li>After calculation, operators continue with result</li>
+                    <li>After calculation, numbers start fresh input</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <!-- Calculator -->
     <div class="container">
         <main>
-            <!-- Display section showing expressions and results -->
+            <!-- Display -->
             <div id="display">
-                <!-- Top display - shows the expression being calculated -->
                 <div class="display-wrapper" id="display-wrapper-top">
-                    <div id="display-top" style="opacity: 0.5; font-size: 28px;">
-                        0
-                    </div>
+                    <div id="display-top" style="opacity: 0.5; font-size: 28px;">0</div>
                 </div>
-                <!-- Bottom display - shows current input and final result -->
                 <div class="display-wrapper" id="display-wrapper-bottom">
-                    <div id="display-bottom">
-                        0
-                    </div>
+                    <div id="display-bottom">0</div>
                 </div>
             </div>
 
-            <!-- Calculator button grid -->
+            <!-- Numpad -->
             <div id="numpad">
-                <!-- Row 1: Clear and utility buttons -->
                 <div class="row">
-                    <button id="button-allClear" class="color-intensive">
-                        <span>AC</span> <!-- All Clear - resets both displays -->
-                    </button>
-                    <button id="button-clear" class="color-intensive">
-                        <span>C</span> <!-- Clear - resets current input -->
-                    </button>
-                    <button id="button-percent" class="color-intensive">
-                        <span>%</span> <!-- Percent operator -->
-                    </button>
-                    <button id="button-multiply" class="color-intensive">
-                        <span>×</span> <!-- Multiply operator -->
-                    </button>
+                    <button id="button-allClear" class="color-intensive"><span>AC</span></button>
+                    <button id="button-clear" class="color-intensive"><span>C</span></button>
+                    <button id="button-percent" class="color-intensive"><span>%</span></button>
+                    <button id="button-multiply" class="color-intensive"><span>×</span></button>
                 </div>
 
                 <!-- Row 2: Numbers 7-9 and divide -->
                 <div class="row">
-                    <button id="button-seven">
-                        <span>7</span>
-                    </button>
-                    <button id="button-eight">
-                        <span>8</span>
-                    </button>
-                    <button id="button-nine">
-                        <span>9</span>
-                    </button>
-                    <button id="button-divide" class="color-intensive">
-                        <span>÷</span> <!-- Divide operator -->
-                    </button>
+                    <button id="button-seven"><span>7</span></button>
+                    <button id="button-eight"><span>8</span></button>
+                    <button id="button-nine"><span>9</span></button>
+                    <button id="button-divide" class="color-intensive"><span>÷</span></button>
                 </div>
 
                 <!-- Row 3: Numbers 4-6 and minus -->
                 <div class="row">
-                    <button id="button-four">
-                        <span>4</span>
-                    </button>
-                    <button id="button-five">
-                        <span>5</span>
-                    </button>
-                    <button id="button-six">
-                        <span>6</span>
-                    </button>
-                    <button id="button-minus" class="color-intensive">
-                        <span>-</span> <!-- Minus operator -->
-                    </button>
+                    <button id="button-four"><span>4</span></button>
+                    <button id="button-five"><span>5</span></button>
+                    <button id="button-six"><span>6</span></button>
+                    <button id="button-minus" class="color-intensive"><span>-</span></button>
                 </div>
 
                 <!-- Row 4: Numbers 1-3 and plus -->
                 <div class="row">
-                    <button id="button-one">
-                        <span>1</span>
-                    </button>
-                    <button id="button-two">
-                        <span>2</span>
-                    </button>
-                    <button id="button-three">
-                        <span>3</span>
-                    </button>
-                    <button id="button-plus" class="color-intensive">
-                        <span>+</span> <!-- Plus operator -->
-                    </button>
+                    <button id="button-one"><span>1</span></button>
+                    <button id="button-two"><span>2</span></button>
+                    <button id="button-three"><span>3</span></button>
+                    <button id="button-plus" class="color-intensive"><span>+</span></button>
                 </div>
 
                 <!-- Row 5: Special buttons and equals -->
                 <div class="row">
-                    <button id="button-back" class="color-intensive">
-                        <span>←</span> <!-- Backspace - deletes last character -->
-                    </button>
-                    <button id="button-zero">
-                        <span>0</span>
-                    </button>
-                    <button id="button-dot" class="color-intensive">
-                        <span>.</span> <!-- Decimal point -->
-                    </button>
-                    <button id="button-calculate" style="background-color: #bec1006e">
-                        <span>=</span> <!-- Equals - evaluates the expression -->
-                    </button>
+                    <button id="button-back" class="color-intensive"><span>←</span></button>
+                    <button id="button-zero"><span>0</span></button>
+                    <button id="button-dot" class="color-intensive"><span>.</span></button>
+                    <button id="button-calculate" style="background-color: #bec1006e"><span>=</span></button>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- Load calculator logic -->
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>© 2025 Tan Le Minh. Built for CSBU103 assignments.</p>
+        <p>Contact: <a href="mailto:25560052@gm.uit.edu.vn">Email</a> · <a href="https://github.com/onecot" target="_blank">GitHub</a></p>
+    </footer>
+
+    <!-- Script -->
     <script type="module" src="./index.js"></script>
 </body>
 </html>
