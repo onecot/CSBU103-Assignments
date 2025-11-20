@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- External Libraries: jQuery (loaded for potential future use), Font Awesome for icons -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Gallery</title>
+</head>
+<body>
+    <!-- Nav -->
+    <nav>Photo Gallery</nav>
+
+    <!-- Preferences -->
+    <div id="preferences" class="container">
+        <div id="slider-wrapper">
+            <span class="slider-button"><i class="fa-solid fa-minus"></i></span>
+            <input id="slider" type="range" value="9" min="1" max="15">
+            <span class="slider-button"><i class="fa-solid fa-plus"></i></span>
+        </div>
+        <button id="help-btn"><i class="fa-solid fa-circle-question"></i> Help</button>
+    </div>
+
+    <!-- Help modal -->
+    <div id="help-modal" class="help-modal">
+        <div class="help-content">
+            <h2>Gallery Controls <button id="help-close"><i class="fa-solid fa-xmark"></i></button></h2>
+            
+            <section>
+                <h3><i class="fa-solid fa-sliders"></i> Slider Controls</h3>
+                <p>Adjust the number of images displayed per row (1-15 columns)</p>
+                <ul>
+                    <li><kbd>-</kbd> button: Decrease columns</li>
+                    <li><kbd>+</kbd> button: Increase columns</li>
+                    <li>Drag slider: Real-time adjustment</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h3><i class="fa-solid fa-keyboard"></i> Keyboard Shortcuts (Image Viewer)</h3>
+                <ul>
+                    <li><kbd>←</kbd> <kbd>→</kbd> Arrow keys: Navigate between images</li>
+                    <li><kbd>-</kbd> and <kbd>=</kbd> / <kbd>+</kbd> : Zoom out and Zoom in</li>
+                    <li><kbd>J</kbd> and <kbd>K</kbd> : Rotate left and Rotate right</li>
+                    <li><kbd>0</kbd> : Reset zoom and rotation</li>
+                    <li><kbd>Esc</kbd> : Close image viewer</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h3><i class="fa-solid fa-mouse-pointer"></i> Mouse Controls</h3>
+                <ul>
+                    <li>Click any image to open full view</li>
+                    <li>Click <kbd>←</kbd> <kbd>→</kbd> buttons to navigate</li>
+                    <li>Click <kbd><i class="fa-solid fa-rotate-left"></i></kbd> <kbd><i class="fa-solid fa-rotate-right"></i></kbd> to rotate</li>
+                    <li>Click <kbd><i class="fa-solid fa-magnifying-glass-minus"></i></kbd> <kbd><i class="fa-solid fa-magnifying-glass-plus"></i></kbd> to zoom</li>
+                    <li>Click <kbd>✖</kbd> to close viewer</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Gallery -->
+    <div id="photo-container">
+        <div class="photo-wrapper"><img src="./images/image-1.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-2.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-3.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-4.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-5.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-6.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-7.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-8.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-9.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-10.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-11.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-12.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-13.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-14.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-15.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-16.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-17.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-18.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-19.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-20.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-21.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-22.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-23.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-24.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-25.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-26.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-27.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-28.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-29.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-30.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-31.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-32.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-33.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-34.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-35.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-36.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-37.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-38.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-39.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-40.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-41.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-42.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-43.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-44.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-45.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-46.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-47.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-48.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-49.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-50.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-51.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-52.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-53.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-54.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-55.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-56.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-57.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-58.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-59.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-60.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-61.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-62.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-63.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-64.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-65.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-66.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-67.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-68.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-69.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-70.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-71.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-72.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-73.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-74.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-75.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-76.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-77.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-78.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-79.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-80.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-81.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-82.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-83.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-84.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-85.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-86.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-87.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-88.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-89.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-90.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-91.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-92.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-93.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-94.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-95.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-96.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-97.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-98.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-99.jpg" alt=""></div>
+        <div class="photo-wrapper"><img src="./images/image-100.jpg" alt=""></div>
+    </div>
+    <!-- Photo modal -->
+    <div id="photo-modal">
+        <button id="modal-prev" class="modal-nav-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <div id="photo-modal-wrapper">
+            <img src="./images/image-1.jpg" alt="">
+        </div>
+        <button id="modal-next" class="modal-nav-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <!-- Controls -->
+        <div id="config-bar">
+            <span class="button-wrapper" id="rotate-left">
+                <i class="fa-solid fa-rotate-left"></i>
+            </span>
+            <span class="button-wrapper" id="rotate-right">
+                <i class="fa-solid fa-rotate-right"></i>
+            </span>
+            <span class="button-wrapper">
+                <i class="fa-solid fa-magnifying-glass-minus"></i>
+            </span>
+            <span class="button-wrapper">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </span>
+        </div>
+        <!-- Close -->
+        <div id="modal-leave">
+            <span class="button-wrapper">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </span>
+        </div>
+    </div>
+    <!-- Script -->
+    <script type="module" src="./index.js"></script>
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>© 2025 Tan Le Minh. Built for CSBU103 assignments.</p>
+        <p>Contact: <a href="mailto:25560052@gm.uit.edu.vn">Email</a> · <a href="https://github.com/onecot" target="_blank">GitHub</a></p>
+    </footer>
+</body>
+</html>

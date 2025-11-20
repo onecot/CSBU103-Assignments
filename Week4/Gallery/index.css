@@ -1,0 +1,467 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Variables */
+
+:root {
+    /* Gallery layout */
+    --gallery-gap: 0.1rem;
+    --gallery-imagePerRow: 9;
+    
+    /* Color palette - Dark theme */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --bg-tertiary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent: #ffffff;
+    --border: #252525;
+}
+
+/* Base */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Nav */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--bg-secondary);
+    padding: 16px 32px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Preferences */
+
+.container {
+    position: sticky;
+    top: 57px;
+    z-index: 9;
+    background-color: var(--bg-primary);
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--border);
+}
+
+#preferences {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Slider wrapper and controls */
+#slider-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.slider-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.slider-button:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* Range slider styling */
+#slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 120px;
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 30% 100%;
+    background-repeat: no-repeat;
+    transition: opacity 0.15s ease;
+}
+
+#slider:hover {
+    opacity: 1;
+}
+
+/* Slider thumb styling */
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Gallery grid */
+
+#photo-container {
+    display: grid;
+    grid-template-columns: repeat(var(--gallery-imagePerRow), 1fr);
+    width: 100%;
+    gap: var(--gallery-gap);
+    padding: var(--gallery-gap);
+}
+
+.photo-wrapper {
+    width: 100%;
+    /* Calculate height to maintain square aspect ratio */
+    height: calc((100vw - var(--gallery-gap) * 2 - var(--gallery-gap) * (var(--gallery-imagePerRow) - 1)) / var(--gallery-imagePerRow));
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.photo-wrapper:hover img {
+    scale: 1.02;
+}
+
+.photo-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+/* Photo modal */
+
+#photo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#photo-modal.show-photo-modal {
+    display: flex;
+}
+
+/* Modal image container */
+#photo-modal-wrapper {
+    height: 90vh;
+    width: 70vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#photo-modal-wrapper > img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Navigation buttons (prev/next) */
+#photo-modal .modal-nav-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    padding: 0;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+#photo-modal .modal-nav-btn:hover {
+    background-color: var(--bg-tertiary);
+    border-color: var(--text-secondary);
+}
+
+#modal-prev.modal-nav-btn {
+    margin-right: 2rem;
+}
+
+#modal-next.modal-nav-btn {
+    margin-left: 2rem;
+}
+
+/* Config bar (zoom and rotate controls) */
+#config-bar {
+    position: absolute;
+    bottom: 150px;
+    display: inline-flex;
+    gap: 4px;
+    padding: 6px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+/* Close button */
+#modal-leave {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+
+#modal-leave .button-wrapper {
+    width: 44px;
+    height: 44px;
+}
+
+#modal-leave i {
+    font-size: 1.5rem;
+}
+
+/* Generic button wrapper for controls */
+.button-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.button-wrapper:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* Help modal */
+
+/* Help button */
+#help-btn {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+#help-btn:hover {
+    background: var(--bg-tertiary);
+}
+
+/* Help modal overlay */
+.help-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.help-modal.show {
+    display: flex;
+}
+
+/* Help modal content */
+.help-content {
+    max-width: 600px;
+    max-height: 80vh;
+    padding: 32px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    overflow-y: auto;
+}
+
+.help-content h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 24px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+#help-close {
+    padding: 4px;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+#help-close:hover {
+    color: var(--text-primary);
+}
+
+.help-content h3 {
+    margin: 20px 0 12px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.help-content section:first-of-type h3 {
+    margin-top: 0;
+}
+
+.help-content p {
+    margin: 8px 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.help-content ul {
+    margin: 8px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.help-content li {
+    padding: 6px 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Keyboard key styling */
+.help-content kbd {
+    padding: 2px 6px;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+    font-size: 0.8em;
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+/* Footer */
+
+#site-footer {
+    margin-top: 64px;
+    padding: 32px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+}
+
+#site-footer p {
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+#site-footer p:last-child {
+    margin: 0;
+}
+
+#site-footer a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+#site-footer a:hover {
+    color: var(--text-secondary);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    nav {
+        padding: 12px 20px;
+        font-size: 1.1rem;
+    }
+    .container {
+        padding: 12px 20px;
+        top: 56px; /* Slightly adjust sticky offset */
+    }
+    #slider {
+        width: 100px;
+    }
+    /* Photo modal occupies full viewport */
+    #photo-modal-wrapper {
+        width: 100vw;
+        height: 100vh;
+    }
+    #photo-modal .modal-nav-btn {
+        height: 40px;
+        width: 40px;
+        font-size: 1rem;
+        margin: 0 8px;
+    }
+    #config-bar {
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #modal-leave {
+        top: 16px;
+        right: 20px;
+    }
+    /* Help modal sizing & typography */
+    .help-content {
+        max-width: 90%;
+        max-height: 90vh;
+        padding: 24px;
+    }
+    .help-content h2 {
+        font-size: 1.1rem;
+    }
+    .help-content h3 {
+        font-size: 0.85rem;
+    }
+    .help-content li,
+    .help-content p {
+        font-size: 0.75rem;
+    }
+}
