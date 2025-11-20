@@ -11,3 +11,8 @@ A collection of weekly assignments for the CSBU103 course.
 
 - Source folder: `Week4/Calculator/`
 - Live preview: https://week4-calculator-ebef10.gitlab.io/
+
+## Week 4 — Gallery
+
+- Source folder: `Week4/Gallery/`
+- Live preview: https://week4-gallery-6e4fb6.gitlab.io/
