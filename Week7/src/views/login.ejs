@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lập trình ứng dụng Web - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="public/js/jquery.min.js"></script>
+  <script src="public/js/app.js"></script>
+  <script src="public/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="public/js/auth-validation.js"></script>
+</head>
+<body class="bg-light d-flex align-items-center min-vh-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5 col-lg-4">
+        <div class="card border-0 shadow">
+          <div class="card-body p-4">
+            <h3 class="card-title text-center mb-4 text-primary">Login</h3>
+            <form id="loginForm" method="POST" action="/login">
+              <div class="mb-3">
+                <label class="form-label" for="username">Username (Email)</label>
+                <input class="form-control" type="text" id="username" name="username" placeholder="example@email.com" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="password" placeholder="Enter password" required>
+              </div>
+              <div id="validationError" class="alert alert-danger" role="alert" style="display:none"></div>
+              <% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+                <div class="alert alert-danger" role="alert">
+                  <%= errorMessage %>
+                </div>
+              <% } %>
+              <% if (typeof successMessage !== 'undefined' && successMessage) { %>
+                <div class="alert alert-success" role="alert">
+                  <%= successMessage %>
+                </div>
+              <% } %>
+              <div class="d-grid mb-3">
+                <button class="btn btn-primary btn-lg" type="submit">Login</button>
+              </div>
+              <div class="text-center">
+                <p class="mb-0">Don't have an account? <a href="/register" class="text-primary">Register here</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
